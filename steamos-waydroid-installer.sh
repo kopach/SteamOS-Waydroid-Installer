@@ -12,7 +12,7 @@ script_version_sha=$(git rev-parse --short HEAD)
 steamos_version=$(cat /etc/os-release | grep -i version_id | cut -d "=" -f2)
 kernel_version=$(uname -r | cut -d "-" -f 1-5 )
 stable_kernel1=6.1.52-valve16-1-neptune-61
-stable_kernel2=6.5.0-valve22-1-neptune-65
+stable_kernel2=6.11.11-valve14-1-neptune-611
 beta_kernel1=6.5.0-valve23-1-neptune-65
 WAYDROID_SCRIPT=https://github.com/casualsnek/waydroid_script.git
 DIR_WAYDROID_SCRIPT=$(mktemp -d)/waydroid_script
@@ -245,7 +245,7 @@ else
 			echo Initializing Waydroid.
  			echo -e "$current_password\n" | sudo -S waydroid init
 			check_waydroid_init
-			
+
 		elif [ "$Choice" == "A13_NO_GAPPS" ]
 		then
 			prepare_custom_image_location
@@ -255,7 +255,7 @@ else
 			echo Initializing Waydroid.
  			echo -e "$current_password\n" | sudo -S waydroid init
 			check_waydroid_init
-			
+
 		elif [ "$Choice" == "A13_GAPPS" ]
 		then
 			prepare_custom_image_location
@@ -266,7 +266,7 @@ else
  			echo -e "$current_password\n" | sudo -S waydroid init
 			check_waydroid_init
 		fi
-	
+
 	# run casualsnek / aleasto waydroid_script
 	echo Install libndk, widevine and fingerprint spoof.
 	install_android_extras
